@@ -54,6 +54,7 @@ void stack::stack_push(double value)
 		newest->down = this->top;
 		this->top = newest;
 		newest->down->up = newest;
+		this->inc_size();
 		newest->set_value(value);
 	}
 }

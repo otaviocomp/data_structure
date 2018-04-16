@@ -1,7 +1,6 @@
 #include <stdio.h>
 
-struct node
-{
+struct node{
 	double value;
 	struct node *left;
 	struct node *right;
@@ -10,18 +9,16 @@ struct node
 void constructor(struct node *noh);
 void insert(struct node *noh, int *h);
 void delete(struct node *noh, int *h);
+void print(struct node *noh, int *h);
 
-int main()
-{
+int main(){
 	printf("--BINARY TREE DATA STRUCTURE--\n\n");
 	char option = '0';
 	int h = 0;
 	double value;
-	struct node *root;
-	while(option != '9')
-	{
-		switch(option)
-		{
+	struct node *root = NULL;
+	while(option != '9'){	
+		switch(option){
 			case '0':
 				printf("-option 0 to repeat this menu;\n");
 				printf("-option 1 to insert a element into the tree;\n");
@@ -40,6 +37,7 @@ int main()
 				printf("height of the tree = %d\n", h); 
 				break;
 			case '4':
+				print(root, &h);
 				break;
 			default:
 				printf("invalid option!\n\n");
@@ -50,21 +48,19 @@ int main()
 	}
 }
 
-void constructor(struct node *noh)
-{
+void constructor(struct node *noh){
 	noh->left = NULL;
 	noh->right = NULL;
 }
 
-void insert(struct node *noh, int *h)
-{
+void insert(struct node *noh, int *h){
 	double val;
 	printf("value: ");
 	scanf("%lf", &val);
 
-	// tree is empty
-	if(*h == 0)
-	{
+	//tree is empty
+	if(*h == 0){
+		printf("entrou!\n");
 		struct node *new_noh;
 		constructor(new_noh);
 		new_noh->value = val;
@@ -73,11 +69,14 @@ void insert(struct node *noh, int *h)
 	}
 }
 
-void delete(struct node *noh, int *h)
-{
-	if(*h == 1)
-	{
+void delete(struct node *noh, int *h){
+	if(*h == 1){
 		noh = NULL;
 		*h = 0;
 	}
+}
+
+void print(struct node *noh, int *h){
+	if(*h == 1)
+		printf("%lf", noh->value);
 }

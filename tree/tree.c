@@ -16,7 +16,7 @@ int main(){
 	char option = '0';
 	int h = 0;
 	double value;
-	struct node *root = NULL;
+	struct node *root; 
 	while(option != '9'){	
 		switch(option){
 			case '0':
@@ -58,8 +58,7 @@ void insert(struct node *noh, int *h){
 	printf("value: ");
 	scanf("%lf", &val);
 
-	//tree is empty
-	if(*h == 0){
+	if(noh == NULL){//tree is empty
 		printf("entrou!\n");
 		struct node *new_noh;
 		constructor(new_noh);
@@ -67,6 +66,12 @@ void insert(struct node *noh, int *h){
 		noh = new_noh;
 		*h = 1;
 	}
+	//tree is not empty
+	*h++;
+	else if(val <= noh->value && noh != NULL)
+		insert(noh->left, h);
+	else 
+		insert(noh->right, h);
 }
 
 void delete(struct node *noh, int *h){

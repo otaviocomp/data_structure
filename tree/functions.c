@@ -5,7 +5,7 @@ void constructor(no *noh){
 	noh->right = NULL;
 }
 
-void insert(struct node *noh, int *h){
+void insert(no *noh, int *h){
 	double val;
 	printf("value: ");
 	scanf("%lf", &val);

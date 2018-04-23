@@ -1,2 +1,4 @@
+CC = gcc
+
 all: 
-	gcc main.c functions.c -o tree 
+	$(CC) main.c functions.c -o tree 

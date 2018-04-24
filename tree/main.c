@@ -1,11 +1,10 @@
 #include "tree.h"
 
 int main(){
-	printf("--BINARY TREE DATA STRUCTURE--\n\n");
+	printf("\n--BINARY TREE DATA STRUCTURE--\n\n");
 	char option = '0';
 	int h = 0;
-	double value;
-	no *root; 
+	no *root = NULL; 
 	while(option != '9'){	
 		switch(option){
 			case '0':
@@ -35,4 +34,5 @@ int main(){
 		printf("option: ");
 		scanf("%c", &option);
 	}
+	return 0;
 }

@@ -17,6 +17,7 @@ int main(){
 				break;
 			case '1':
 				insert(root, &h);
+				printf("root value: %d\n", root->value);
 				break;
 			case '2':
 				del(root, &h);
@@ -26,9 +27,6 @@ int main(){
 				break;
 			case '4':
 				printTree(root, &h);
-				break;
-			default:
-				printf("invalid option!\n\n");
 				break;
 		}
 		printf("option: ");

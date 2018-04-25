@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-typedef struct node{
+typedef struct noh{
 	int value;
-	struct node *left;
-	struct node *right;
+	struct noh *left;
+	struct noh *right;
 }no;
 
-void constructor(no *noh);
-void insert(no *noh, int *h);
-void del(no *noh, int *h);
-void printTree(no *noh, int *h);
+void constructor(no *node);
+void insert(no *node, int *h);
+void del(no *node, int *h);
+void printTree(no *node, int *h);

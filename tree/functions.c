@@ -13,7 +13,9 @@ void insert(no *noh, int *h){
 		no *new_noh;
 		constructor(new_noh);
 		new_noh->value = val;
+		printf("new_noh value: %d\n", new_noh->value);
 		noh = new_noh;
+		printf("noh value: %d\n", new_noh->value);
 	}
 	else if(val <= noh->value){
 		*h++;
@@ -26,13 +28,11 @@ void insert(no *noh, int *h){
 }
 
 void del(no *noh, int *h){
-	if(*h == 1){
-		noh = NULL;
-		*h = 0;
-	}
+	if(*h == 0 && noh == NULL)
+		printf("tree is empty!\n");
 }
 
-void print(no *noh, int *h){
-	if(*h == 1)
-		printf("%d", noh->value);
+void printTree(no *noh, int *h){
+	if(*h == 0 && noh == NULL)
+		printf("%d\n", noh->value);
 }

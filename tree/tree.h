@@ -9,4 +9,4 @@ typedef struct node{
 void constructor(no *noh);
 void insert(no *noh, int *h);
 void del(no *noh, int *h);
-void print(no *noh, int *h);
+void printTree(no *noh, int *h);

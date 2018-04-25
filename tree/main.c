@@ -25,7 +25,7 @@ int main(){
 				printf("height of the tree = %d\n", h); 
 				break;
 			case '4':
-				print(root, &h);
+				printTree(root, &h);
 				break;
 			default:
 				printf("invalid option!\n\n");
